@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Epilogue', sans-serif;  
+}
+$gray: rgb(114, 110, 110);
+
+@mixin button($border, $px, $py, $text, $bg, $size){
+    border: 1px solid $border;
+    padding: $py $px;
+    text-decoration: none;
+    color: $text;
+    text-decoration: none;
+    background-color: $bg;
+    font-size: $size;
+    border-radius: 12px;
+}
+
+%hover{
+    color: rgb(58, 55, 55);
+}
+%textstyle{
+    color: $gray;
+    font-weight: 500;
+}
+%flexdisplay{
+    display: flex;
+    align-items: center;
+}
+header{
+    @extend %flexdisplay;
+    justify-content: space-between;
+    padding: 20px 40px ;
+    .action {
+        @extend %flexdisplay;
+        @extend %textstyle;
+        gap: 25px;
+        .login{
+            @include button(white,0 , 0, $gray, transparent, 14px);
+            @extend %textstyle;
+        }
+        .login:hover{
+            @extend %hover;
+        }
+        .register{
+            @include button($gray,12px ,8px,$gray, transparent,14px);
+            @extend %textstyle;
+        }
+        .register:hover{
+            @extend %hover;
+            border: 1px solid rgb(49, 48, 48);
+        }
+    }
+}
+.navigation{
+    @extend %flexdisplay;
+    gap: 40px;
+    nav{
+        @extend %flexdisplay, %textstyle;
+        gap: 25%;
+        select{
+            text-decoration: none;
+            border: none;
+            font-size: 14px;
+            @extend %textstyle;
+        }
+        select:focus{
+            outline: none;
+        }
+        select:hover{
+            @extend %hover
+        }
+        p{
+            font-size: 14px;
+        }
+        p:hover{
+            @extend %hover
+        }
+    }
+}
+
