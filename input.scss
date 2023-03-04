@@ -1,7 +1,7 @@
 *{
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Epilogue', sans-serif;  
+    font-family: 'Epilogue', sans-serif;   
 }
 $gray: rgb(114, 110, 110);
 
@@ -77,5 +77,47 @@ header{
             @extend %hover
         }
     }
+}
+.hero{
+    height: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    padding:  30px  100px;
+    gap: 140px;
+
+    .desktop{
+        width: 70px;
+    img{
+        width: 600px;
+    } }
+}
+.content{
+    width: 480px;
+    padding-top: 100px;
+    h1{
+        font-size: 75px;
+        margin-bottom: 40px;
+    }
+    span{
+        color: gray;
+        font-size: 20px;
+    }
+    button{
+        margin-top: 40px;
+        background-color: black;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 12px;
+        font-size: 18px;
+        border: none;
+    }
+}
+.ads{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    margin-top: 300px;
+    
 }
 
